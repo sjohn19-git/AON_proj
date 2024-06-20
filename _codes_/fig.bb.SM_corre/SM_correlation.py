@@ -215,6 +215,8 @@ def sr(x):
     res = x.maketrans(''.join(normal), ''.join(super_s))
     return x.translate(res)
 
+##finding mean wave heights for contouring
+
 wvc=np.load("/Users/sebinjohn/AON_PROJECT/Data/wave/wave_all_for cross_correlation_2018-2021_3yr.npy")
 k=np.nanmean(wvc,axis=2)
 k[k==0]=np.nan
@@ -259,7 +261,7 @@ for i in range(len(regions)):
     for i in range(len(index1)):
         wave_sumpixels=wave_sumpixels+(wave_all[index1[i],index2[i],:].flatten())
     wave_sumpixels=wave_sumpixels/len(index1)
-    ####plotting for fig dd. 
+    ####plotting for fig dd.a 
     
     xy = np.vstack([wave_sumpixels,sum_tot[:]])
     z = gaussian_kde(xy)(xy)
