@@ -92,7 +92,7 @@ for sta in stati:
     
     sum_tot=interp_x
     #setting outliers
-    sum_tot[sum_tot<-160]=np.nan
+    sum_tot[sum_tot<-150]=np.nan
     sum_tot[sum_tot>-90]=np.nan
     plt.plot(sum_tot)
     

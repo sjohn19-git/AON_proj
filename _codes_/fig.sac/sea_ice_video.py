@@ -40,11 +40,12 @@ time = np.arange(start, end, 3600)
 
 # periods using 1 to 2
 
-spsm2 = seis[52:61, :]
+spsm2 = seis[53:61, :]
 spsm1 = np.mean(spsm2, axis=0)
 spsm = medfilt(spsm1, 7)
 spsm[spsm==0]=np.nan
 spsm[spsm>-50]=np.nan
+spsm[spsm<-150]=np.nan
 
 plo_time = []
 for ele in time:
